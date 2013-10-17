@@ -1,9 +1,9 @@
 #!/bin/bash
 #Asumo que el directorio mis_programas está siempre en el mismo sitio.
-cd ${HOME}/mis_programas/transfer_confs
+cd ${HOME}/mis_programas/transfer_confs/
 git add .
 git commit -a -m "$(date)"
-#timeout 20 git push --mirror 
+#timeout 20 git push --mirror -f
 #Veo cuantos commits hay y si son mas de 50, los vuela
 if [ "$(git log --oneline |wc -l)" -gt 50 ]
   then 
@@ -14,5 +14,5 @@ if [ "$(git log --oneline |wc -l)" -gt 50 ]
     #limpio el repo.
     git gc
 fi
-timeout 20 git push --mirror
+timeout 20 git push --mirror -f
 
