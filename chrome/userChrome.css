@@ -1,0 +1,27 @@
+/*findbar toolbarbutton[anonid="find-next"] label:after { content: 'Next' !important; }
+findbar toolbarbutton[anonid="find-previous"] label:after { content: 'Previous' !important; }
+findbar toolbarbutton[anonid="find-next"] label:after,
+findbar toolbarbutton[anonid="find-previous"] label:after { margin-left: 1px !important; }*/
+/*findbar toolbarbutton[anonid="find-next"],findbar toolbarbutton[anonid="find-previous"]{  padding: -5px !important; }*/
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+.findbar-find-next label:after { content:"Next"; margin-left:2px!important; }
+.findbar-find-previous label:after { content:"Prev"; margin-left:2px!important;}
+
+/*.findbar-container>*,.findbar-container>hbox>* { display:-moz-box; }*/
+
+/*.findbar-container>spacer { -moz-box-ordinal-group:2 !important; }*/
+.findbar-textbox { width:30em !important; }
+/*findbar,findbar toolbarbutton[anonid="find-next"],findbar toolbarbutton[anonid="find-previous"]  {height:5px !important;}*/
+
+/*.findbar-find-previous {
+  -moz-image-region: rect(0, 12px, 9px, 0);
+  -moz-border-end-width: 0;
+}
+
+.findbar-find-previous:focus + .findbar-find-next {
+  -moz-border-start-width: 0;
+}
+
+.findbar-find-previous:focus {
+  -moz-border-end-width: 1px;
+}*/
