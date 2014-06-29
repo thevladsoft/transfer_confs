@@ -1,7 +1,7 @@
 #!/bin/bash
 #Asumo que el directorio mis_programas está siempre en el mismo sitio.
 cd ${HOME}/mis_programas/transfer_confs/
-git add .
+git add --all .
 git commit -a -m "fixup! $(date)"
 #timeout 20 git push --mirror -f
 #Veo cuantos commits hay y si son mas de 50, los vuela
