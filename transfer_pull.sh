@@ -7,3 +7,7 @@ if [[ $? == 1  ]] || [[ "${pulling,,}" == *conflict* ]] || [[ "${pulling,,}" == 
 #    conflicto=true
    kdialog --passivepopup "<font color=red>Ocurrio un conflicto merging $(pwd)" 
 fi
+STATUS=$(git status --porcelain)
+if [[ $STATUS ]];then 
+   kdialog --title "$(basename $(pwd))" --passivepopup "$STATUS"
+fi
