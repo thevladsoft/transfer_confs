@@ -11,3 +11,13 @@ STATUS=$(git status --porcelain)
 if [[ $STATUS ]];then 
    kdialog --title "$(basename $(pwd))" --passivepopup "$STATUS"
 fi
+if [ "$(git log --oneline |wc -l)" -gt 100 ]
+  then
+#    echo U > ${HOME}/borra.tabs
+#    git reset --soft HEAD~50
+#    #con esto conservo un commit previo.
+#    git commit -a -m "$(date)"
+#    #limpio el repo.
+#    git gc
+     kdialog --passivepopup "<font color=red>Es ora de hacer un git rebase -i --autosquash en  $(pwd)"
+fi
