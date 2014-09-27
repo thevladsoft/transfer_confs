@@ -8,7 +8,7 @@ if [[ $? == 1  ]] || [[ "${pulling,,}" == *conflict* ]] || [[ "${pulling,,}" == 
    kdialog --passivepopup "<font color=red>Ocurrio un conflicto merging $(pwd)" 
 fi
 STATUS="$(git status -bs)"
-if [[ $STATUS != "## master" ]];then 
+if [[ $STATUS != "## master" ]] && [[ $STATUS != "## master...origin/master"  ]] ;then 
    kdialog --title "$(basename $(pwd))" --passivepopup "$STATUS"
 fi
 if [ "$(git log --oneline |wc -l)" -gt 100 ]
