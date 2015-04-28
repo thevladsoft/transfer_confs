@@ -1,0 +1,13 @@
+#!/bin/bash
+#Siempre habrá un fixup! que no se le podrá hacer squash, debido a un merge justo antes
+echo """
+#Escoge todos los commits hechos hasta el primero con un fixup! en el mensage del commit,
+#y cambia las opciones de todos los mensajes con fixup! (menos el primero) a squash
+#Cualquier cambio no deseado cambiar a mano.
+#Cuando abra la segunda vez para escribir el mensaje de mergedcommit dará un error por 
+#no encontrar la palabra fixup!. Ignorar"""
+read -n1 -p "Presiona cualquier tecla"
+
+#GIT_EDITOR="vi -c '%s/^pick\ \([^\ ]*\) fixup\!/squash \1 /g'" git rebase -i HEAD~20
+GIT_EDITOR="vi -c '2,$ s/^pick\ \([^\ ]*\) fixup\!/squash \1 /g'" git rebase -i $(git log --oneline|grep '^[^ ]* fixup!'|tail -n1|cut -d" " -f1)
+

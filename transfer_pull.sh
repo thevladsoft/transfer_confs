@@ -19,5 +19,6 @@ if [ "$(git log --oneline |wc -l)" -gt 100 ]
 #    git commit -a -m "$(date)"
 #    #limpio el repo.
 #    git gc
-     kdialog --passivepopup "<font color=red>Es ora de hacer un git rebase -i --autosquash en  $(pwd)"
+#     kdialog --passivepopup "<font color=red>Es ora de hacer un git rebase -i --autosquash en  $(pwd)"
+     kdialog --passivepopup "<font color=red>Es hora de rebaser en $(pwd)"
 fi
